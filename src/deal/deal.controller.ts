@@ -3,16 +3,16 @@ import { DealService } from './deal.services';
 
 const router = Router()
 
-const twitService = new DealService()
+const dealService = new DealService()
 
 router.post('/', (req: Request, res: Response) => {
-    const twit = twitService.createTwit(req.body)
-    res.status(201).json(twit)
+    const deal = dealService.createTwit(req.body)
+    res.status(201).json(deal)
 })
 
 router.get('/', async(req: Request, res: Response)=>{
-    const twits = await twitService.getTwits()
-    res.json(twits)
+    const deals = await dealService.getTwits()
+    res.json(deals)
 })
 
-export const twitRouter = router
+export const DealRouter = router
